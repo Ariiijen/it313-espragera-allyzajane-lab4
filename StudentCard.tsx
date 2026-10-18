@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TextInput, View } from "react-native";
 
 interface StudentCardProps {
   name: string;
@@ -15,10 +15,18 @@ export default function StudentCard({
 }: StudentCardProps) {
   return (
     <View style={styles.card}>
-      <Text style={styles.name}>{name}</Text>
-      <Text style={styles.detail}>{course}</Text>
-      <Text style={styles.detail}>{units} units</Text>
+      <Text style={styles.name}>Name: {name}</Text>
+      <Text style={styles.detail}>Units: {units}</Text>
       {isFullLoad && <Text style={styles.fullLoad}>Full Load</Text>}
+      <TextInput
+        style={{
+          borderWidth: 1,
+          borderColor: "#ccc",
+          padding: 4,
+          marginTop: 8,
+        }}
+        placeholder="Type here to test..."
+      />
     </View>
   );
 }
